@@ -1,0 +1,14 @@
+Invalid MIT-MAGIC-COOKIE-1 key/home/luca/anaconda3/lib/python3.7/site-packages/gym/logger.py:30: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  warnings.warn(colorize('%s: %s'%('WARN', msg % args), 'yellow'))
+epoch 	 episode 	 steps 	 success_rate %
+0 	 50 		 2500 	 77
+1 	 100 		 5000 	 86
+2 	 150 		 7500 	 85
+3 	 200 		 10000 	 87
+4 	 250 		 12500 	 63
+5 	 300 		 15000 	 99
+6 	 350 		 17500 	 86
+7 	 400 		 20000 	 99
+8 	 450 		 22500 	 90
+9 	 500 		 25000 	 83
+10 	 550 		 27500 	 72
