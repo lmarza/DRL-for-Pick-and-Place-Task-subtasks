@@ -34,7 +34,7 @@ In order to use a dense reward and obtain good results we modified the original 
 Basically our new *env.step()* function now requires two parameters, the action to be taken in the environment (as before), but also what is the goal that the agent is trying to achieve.
 In case of approach the goal will be a position slightly above the block as mentioned before, for manipulate will be the base of the object to grasp and finally for retract the goal will be the point where we want to place the object
 
-If you want train the agent with our method you need to replace the base gym with the gym in this repository: `Towards-Hierarchical-Task-Decomposition-using-DRL-for-Pick-and-Place-Subtasks/gym`
+If you want train the agent with our method you need to replace the base gym with the gym in this repository: `Towards-Hierarchical-Task-Decomposition-using-DRL-for-Pick-and-Place-Subtasks/gymModified`
 
 ### Clone the repository
 
