@@ -30,8 +30,8 @@ For installing OpenAI fetch simulator: refer to [Fetch](https://openai.com/blog/
 
 Since a hierarchical task decomposition is used, there are two different goals during the same episode: one is the final goal of the whole episode, which is where to place the block and the other one changes based on which subtask we want to train.
 
-In order to use a dense reward and obtain good results we modified the original OpenAI gym's $step$ function, which determines for each action perform to the environment, the next state, the reward obtained for that action and if the we reach the episode goal.
-Basically our new $env.step()$ function now requires two parameters, the action to be taken in the environment (as before), but also what is the goal that the agent is trying to achieve.
+In order to use a dense reward and obtain good results we modified the original OpenAI gym's *step* function, which determines for each action perform to the environment, the next state, the reward obtained for that action and if the we reach the episode goal.
+Basically our new *env.step()* function now requires two parameters, the action to be taken in the environment (as before), but also what is the goal that the agent is trying to achieve.
 In case of approach the goal will be a position slightly above the block as mentioned before, for manipulate will be the base of the object to grasp and finally for retract the goal will be the point where we want to place the object
 
 If you want train the agent with our method you need to replace the base gym with the gym in this repository: `Towards-Hierarchical-Task-Decomposition-using-DRL-for-Pick-and-Place-Subtasks/gym`
