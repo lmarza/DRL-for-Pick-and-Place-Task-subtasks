@@ -3,7 +3,10 @@
 **[Luca Marzari](https://github.com/LM095) et. al.**
 
 ## Abstract
-![](https://i.imgur.com/VIo5bWY.png =300x)
+![](https://i.imgur.com/CHWfFQK.png)
+
+
+
 Robotic  automation  for  pick  and  place  task  has vast applications. Deep Reinforcement learning (DRL) is one of the leading robotic automation technique that has been able to achieve dexterous manipulation and locomotion robotics skills.However, a major drawback of using DRL is the *Data hungry* training regime of DRL that requires millions of trial and error attempts,  impractical  in  real  robotic  hardware. We  propose  a multi-subtask  reinforcement  learning  method  where  complex tasks can be decomposed into low-level subtasks. These subtasks can be parametrised as expert networks and learnt via existing DRL methods. The trained subtasks can be choreographed by a  high-level  synthesizer.  As  a  test  bed,  we  use  a  pick  and place  robotic  simulator,  and  transfer  the  learnt  behaviour  in a  real  robotic  system.  We  show  that  our  method  outperforms imitation learning based method and reaches high success rate compared  to  an  end-to-end  learning  approach.  Furthermore,we  investigate  the  trained  subtasks  to  demonstrate  a  adaptive behaviour by fine-tuning a subset of subtasks on a different task.Our  approach  deviates  from  the  end-to-end  learning  strategy and provide an initial direction towards learning modular task representations  that  can  generate  robust  behaviours.
 
 
