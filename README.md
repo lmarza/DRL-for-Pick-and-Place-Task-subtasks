@@ -121,7 +121,9 @@ mpirun -np 6 python -u train.py --env-name='FetchPush-v1' 2>&1 | tee pick.log
 
 ### LSE training:
 The figure presented here below depicts the sample-efficiency of DDPG+HER, BC and a end-to-end learning method for learning the subtasks.The peak represents the maximum success reached by each method for each subtask, i.e. first peak denotes the completion of training of the approach module, the second peak denotes completion of  training  of  the manipulate  module  and the third  peak  denotes  training of  retract module.
-![](https://i.imgur.com/anQPo1z.png)
+
+![](https://i.imgur.com/s6QExO9.png)
+
 
 ### Adaptive behavior:
 The  training  strategy  in  which  we  load  the  weights  of  the approach  is  sample-efficient  by  90k  compared  to  end-to-end  learning.  For  our  proposed  strategy,  the  agents  inherits the trajectory for approach from previous training of *FetchPickAndPlace* and fine tunes the policy to perfectly align the approach trajectory for the *FetchPush* task. Further, the agent learns the policy to push the block
