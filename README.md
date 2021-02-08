@@ -23,7 +23,7 @@ Robotic  automation  for  pick  and  place  task  has vast applications. Deep Re
 - Python3.7+
 - PyTorch==1.0.0
 - mpi4py
-- OpenAI Gym==0.17.1 (base with some changes)
+- OpenAI gym==0.17.1 (base with some changes)
 - OpenAI gym==0.10.8
 - mujoco physics engine
 
