@@ -57,7 +57,7 @@ https://github.com/cvas-ug/simple-reactive-nn
 ~/anaconda3/lib/python3.7/site-packages/gym
 ```
 - rename your gym folder to whatever name you prefer and place the new gym folder copied from this repository and change the name from "gymModified" to "gym".
-- For all the subtasks training you can stop the training after two consecutive high success rate. For the plot reported in the results section, we stopped approach training after 9 epoch, manipulate after 2 epoch and retract after 6 epoch.
+- For all the subtasks training you can stop the training after two consecutive high success rate. For the plot reported in the results section, we stopped approach training after 9 epochs, manipulate after 2 epochs and retract after 6 epochs.
 
 #### Train Approach LSE 
 - Go to the folder named "fetchPickAndPlace-DDPG+HER"
@@ -89,13 +89,7 @@ mpirun -np 1 python -u train.py --env-name='FetchPickAndPlace-v1' 2>&1 | tee pic
 - Use your original Gym==0.10.8.
 - Transfer the saved weights from the "saved_models" folder of "FetchPickAndPlace-DDPG+HER" into the "HLS" folder (replace the folder if asked)
 - In the "init Weights" folder there are some weights collected from BC subtasks training. If you want to test HLS with BC methods, copy the file in the "initWeights" folder in to "train" and "weights" folders.
-- In the "HLS" folder you can choose different methods to train HLS: 
- -- `dense_rewardHandEng`
- -- `sparse_rewardHandEng`
- -- `dense_reward_BC`
- -- `sparse_reward_BC`
- -- `dense_rewardDDPG_HER`
- -- `sparse_rewardDDPG_HER`
+- In the "HLS" folder you can choose different methods to train HLS: `dense_rewardHandEng`,`sparse_rewardHandEng`,`dense_reward_BC`,`sparse_reward_BC`, `dense_rewardDDPG_HER`,`sparse_rewardDDPG_HER`
  
  Dense/sparse reward HandEng it's the training of an agent that has to learn how to choreograph hand engineering actions. Dense/Sparse reward BC it's the training of an agent that has to learn how to choreograph low-level behaviors trained with BC and similar for DDPG+HER.
 
