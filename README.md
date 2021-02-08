@@ -125,3 +125,17 @@ The figure presented here below depicts the sample-efficiency of DDPG+HER, BC an
 ### Adaptive behavior:
 The  training  strategy  in  which  we  load  the  weights  of  the approach  is  sample-efficient  by  90k  compared  to  end-to-end  learning.  For  our  proposed  strategy,  the  agents  inherits the trajectory for approach from previous training of *FetchPickAndPlace* and fine tunes the policy to perfectly align the approach trajectory for the *FetchPush* task. Further, the agent learns the policy to push the block
 ![](https://i.imgur.com/nq4NYXc.png)
+
+## Citation
+
+Towards Hierarchical Task Decomposition using Deep Reinforcement Learning for Pick and Place Subtasks:  
+```
+@article{subtaskDRL2021,
+  author={Luca Marzari and Ameya Pore and Diego Dall'Alba and Gerardo Aragon-Camarasa and Alessandro Farinelli and Paolo Fiorini},
+  title={Towards Hierarchical Task Decomposition using Deep Reinforcement Learning for Pick and Place Subtasks},
+  year={2021},
+  url={},
+  archivePrefix={arXiv},
+  eprint={}
+}
+```
