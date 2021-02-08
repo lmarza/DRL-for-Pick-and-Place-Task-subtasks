@@ -24,6 +24,7 @@ Robotic  automation  for  pick  and  place  task  has vast applications. Deep Re
 - PyTorch==1.0.0
 - mpi4py
 - OpenAI Gym==0.17.1 (base with some changes)
+- OpenAI gym==0.10.8
 - mujoco physics engine
 
 Here, we used the OpenAI simulator *FetchPickandPlace-v1* which provides a kinematic state vector as an input to our network.
@@ -52,7 +53,7 @@ https://github.com/cvas-ug/simple-reactive-nn
 
 ### Step 1: Train the Low-level Subtask Expert (LSE) 
 
-- Use Gym==0.10.8 modified.
+- Use Gym==0.17.1 modified.
 - replace your original gym folder with the one present in this repository. Usually, if you are using anaconda you can find your gym at this path:
 ```
 ~/anaconda3/lib/python3.7/site-packages/gym
