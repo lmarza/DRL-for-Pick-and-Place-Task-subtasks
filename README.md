@@ -137,8 +137,8 @@ Towards Hierarchical Task Decomposition using Deep Reinforcement Learning for Pi
   author={Luca Marzari and Ameya Pore and Diego Dall'Alba and Gerardo Aragon-Camarasa and Alessandro Farinelli and Paolo Fiorini},
   title={Towards Hierarchical Task Decomposition using Deep Reinforcement Learning for Pick and Place Subtasks},
   year={2021},
-  url={},
-  archivePrefix={arXiv},
+  url={https://arxiv.org/abs/2102.04022},
+  archivePrefix={arXiv:2102.04022 [cs.RO]},
   eprint={}
 }
 ```
