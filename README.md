@@ -129,6 +129,10 @@ The figure presented here below depicts the sample-efficiency of DDPG+HER, BC an
 The  training  strategy  in  which  we  load  the  weights  of  the approach  is  sample-efficient  by  90k  compared  to  end-to-end  learning.  For  our  proposed  strategy,  the  agents  inherits the trajectory for approach from previous training of *FetchPickAndPlace* and fine tunes the policy to perfectly align the approach trajectory for the *FetchPush* task. Further, the agent learns the policy to push the block
 ![](https://i.imgur.com/nq4NYXc.png)
 
+## Robotic Part:
+For the robotic implementation and for panda-gym integration with real robot check this repo https://github.com/Envq/panda_gym_integration.
+This part of the work was made by **Enrico Sgarbanti** [@**Envq**](https://github.com/Envq) of University of Verona.
+
 ## Citation
 
 Towards Hierarchical Task Decomposition using Deep Reinforcement Learning for Pick and Place Subtasks:  
