@@ -121,9 +121,6 @@ class ddpg_agent:
                             objectPos = obsDataNew['observation'][3:6]
                             object_rel_pos = obsDataNew['observation'][6:9]
                             obs = obsDataNew["observation"]
-
-                           
-                            timeStep += 1
                      
                        
                         timeStep = 0
