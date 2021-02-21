@@ -101,16 +101,6 @@ from dense_rewardDDPG_HER import train, test
 python main.py
 ```
 
-## Adaptive behavior
-One of the hypotheses of this study lies in reusing a subset of the acquired representations gained on one task and generalize it to an unseen similar task. To investigate this hypothesis, we conduct one experiment: we use the approach subtask (weights of the approach  LSE network) trained on the *FetchPickAndPlace* task as an apriori knowledge to learn the *FetchPush* task with DDPG + HER.
-- Use your original Gym==0.10.8.
-- go to folder "DDPG+HERe2e-PriorKnowledge"
-- in the folder "saved_models/FetchPush-V1" you will find already the approach weights file, if you have trained your agent in Step 1 replace this file with yours and rename it "approach".
-- run the program (for our results we use 6 mpi):
-```
-mpirun -np 6 python -u train.py --env-name='FetchPush-v1' 2>&1 | tee pick.log
-```
-
 
 ## Results:
 
