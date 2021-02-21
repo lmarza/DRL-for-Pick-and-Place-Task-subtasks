@@ -328,14 +328,11 @@ class ddpg_agent:
             timeStep = 0
             observation = self.env.reset()
             obs = observation["observation"]
-            lastObs = observation
-            goal = lastObs["desired_goal"]
-            objectPos = lastObs["observation"][3:6]
-            object_rel_pos = lastObs["observation"][6:9]
+            goal = observation["desired_goal"]
+            objectPos = observation["observation"][3:6]
+            object_rel_pos = observation["observation"][6:9]
             object_oriented_goal = object_rel_pos.copy()
             object_oriented_goal[2] += 0.03  # first make the gripper go slightly above the object
-            
-            g = lastObs["observation"][3:6]
             grip_pos = -object_rel_pos + objectPos
 
             object_pos_goal = objectPos.copy()
@@ -391,7 +388,7 @@ class ddpg_agent:
                 for i in range(len(object_rel_pos)):
                     action[i] = object_rel_pos[i] * 6
 
-                action[3] = -0.03
+                action[3] = -0.01
 
                 obsDataNew, reward, done, info = self.env.step(action, objectPos)
                 timeStep += 1
