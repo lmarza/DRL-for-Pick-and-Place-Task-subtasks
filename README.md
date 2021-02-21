@@ -3,19 +3,14 @@
 **https://arxiv.org/abs/2102.04022 [Luca Marzari](https://github.com/LM095) et. al.**
 
 ## Abstract
-<p align="center">
- <img src="images/architecture2.png" width="400" height="480">
-</p>
+
+Framework Proposed                       |  Architecture
+:---------------------------------------:|:-------------------------:
+<img src="images/arc1.png" width="250">  |  <img src="images/generalArchitecture.png" width="250">
 
 
-Robotic  automation  for  pick  and  place  task  has vast applications. Deep Reinforcement learning (DRL) is one of the leading robotic automation technique that has been able to achieve dexterous manipulation and locomotion robotics skills.However, a major drawback of using DRL is the *Data hungry* training regime of DRL that requires millions of trial and error attempts,  impractical  in  real  robotic  hardware. We  propose  a multi-subtask  reinforcement  learning  method  where  complex tasks can be decomposed into low-level subtasks. These subtasks can be parametrised as expert networks and learnt via existing DRL methods. The trained subtasks can be choreographed by a  high-level  synthesizer.  As  a  test  bed,  we  use  a  pick  and place  robotic  simulator,  and  transfer  the  learnt  behaviour  in a  real  robotic  system.  We  show  that  our  method  outperforms imitation learning based method and reaches high success rate compared  to  an  end-to-end  learning  approach.  Furthermore,we  investigate  the  trained  subtasks  to  demonstrate  a  adaptive behaviour by fine-tuning a subset of subtasks on a different task.Our  approach  deviates  from  the  end-to-end  learning  strategy and provide an initial direction towards learning modular task representations  that  can  generate  robust  behaviours.
-
-
-
-
-
-
-
+Robotic learning using  Deep Reinforcement learning (DRL) has emerged as a leading robotic automation technique to generate adatible behaviour.
+However, a major drawback of using DRL is the *data hungry* training regime that requires millions of trial and error attempts, impractical in real robotic hardware. We propose a multi-subtask reinforcement learning method where complex tasks can be decomposed into low-level subtasks. These subtasks can be parametrized as expert networks and learnt via existing DRL methods. The trained subtasks can be sequenced with a high-level choreographer. As a testbed, we use a pick and place robotic simulator, and transfer the learnt behaviours in a real robotic system. We show that our method outperforms imitation learning based methods and reaches high success rate compared to an end-to-end learning approach. All our experiments are carried out on a CPU-based system that demonstrate their rapid deployment in simple computing systems, contrary to commonly used heavy processing machines such as GPU. Our approach deviates from the end-to-end learning strategy and provides an initial direction towards learning modular task representations that can generate robust and transferable behaviours.
 
 
 ## Implementation details
@@ -121,13 +116,11 @@ mpirun -np 6 python -u train.py --env-name='FetchPush-v1' 2>&1 | tee pick.log
 
 ### LSE training:
 The figure presented here below depicts the sample-efficiency of DDPG+HER, BC and a end-to-end learning method for learning the subtasks.The peak represents the maximum success reached by each method for each subtask, i.e. first peak denotes the completion of training of the approach module, the second peak denotes completion of  training  of  the manipulate  module  and the third  peak  denotes  training of  retract module.
+DDPG+HER outperforms BC and reaches 100% success in 255k steps, while BC takes 372k steps. Moreover, DDPG+HER shows a smooth monotonous learning curve compared to BC which does not stabilise immediately after reaching high success values. Overall, DDPG+HER shows less variance compared to BC.
 
 ![](https://i.imgur.com/s6QExO9.png)
 
 
-### Adaptive behavior:
-The  training  strategy  in  which  we  load  the  weights  of  the approach  is  sample-efficient  by  90k  compared  to  end-to-end  learning.  For  our  proposed  strategy,  the  agents  inherits the trajectory for approach from previous training of *FetchPickAndPlace* and fine tunes the policy to perfectly align the approach trajectory for the *FetchPush* task. Further, the agent learns the policy to push the block
-![](https://i.imgur.com/nq4NYXc.png)
 
 ## Robotic Part:
 For the robotic implementation and for panda-gym integration with real robot check this repo https://github.com/Envq/panda_gym_integration.
