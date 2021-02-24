@@ -113,6 +113,9 @@ DDPG+HER outperforms BC and reaches 100% success in 255k steps, while BC takes 3
 
 
 ## Robotic Part:
+![](https://i.imgur.com/u0QuEe9.jpg)
+> *(a)* Pick and place correctly done with both end-to-end learning strategy with DDPG+HER and LSE DDPG+HER. *(b)* Failure of the pick and place task with a thin cylindrical object for the agent trained with end-to-end strategy. *(c)* Success of the pick and place task with a thin cylindrical object for the agent trained with our LSE strategy. *(d)* Failure of the pick and place task with a small box object for the agent trained with end-to-end strategy. *(e)* Success of the pick and place task with a small box object for the agent trained with our LSE strategy.
+
 For the robotic implementation and for panda-gym integration with real robot check this repo https://github.com/Envq/panda_gym_integration.
 This part of the work was made by **Enrico Sgarbanti** [@**Envq**](https://github.com/Envq) of University of Verona.
 
