@@ -120,15 +120,13 @@ For the robotic implementation and for panda-gym integration with real robot che
 This part of the work was made by **Enrico Sgarbanti** [@**Envq**](https://github.com/Envq) of University of Verona.
 
 ## Citation
-
+This work has been submitted to the IEEE for possible publication. Copyright may be transferred without notice, after which this version may no longer be accessible.
 Towards Hierarchical Task Decomposition using Deep Reinforcement Learning for Pick and Place Subtasks:  
 ```
-@article{subtaskDRL2021,
-  author={Luca Marzari and Ameya Pore and Diego Dall'Alba and Gerardo Aragon-Camarasa and Alessandro Farinelli and Paolo Fiorini},
+@article{marzari2021towards,
   title={Towards Hierarchical Task Decomposition using Deep Reinforcement Learning for Pick and Place Subtasks},
-  year={2021},
-  url={https://arxiv.org/abs/2102.04022},
-  archivePrefix={arXiv:2102.04022 [cs.RO]},
-  eprint={}
+  author={Marzari, Luca and Pore, Ameya and Dall'Alba, Diego and Aragon-Camarasa, Gerardo and Farinelli, Alessandro and Fiorini, Paolo},
+  journal={arXiv preprint arXiv:2102.04022},
+  year={2021}
 }
 ```
