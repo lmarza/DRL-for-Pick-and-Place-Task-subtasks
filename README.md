@@ -18,7 +18,7 @@ Deep Reinforcement Learning (DRL) is emerging as a promising approach to generat
 - PyTorch==1.0.0
 - mpi4py
 - OpenAI gym==0.17.1 (base with some changes)
-- OpenAI gym==0.10.8
+- OpenAI gym==0.10.8 (base with some changes in the action space)
 - mujoco physics engine
 
 Here, we used the OpenAI simulator *FetchPickandPlace-v1* which provides a kinematic state vector as an input to our network.
@@ -82,7 +82,12 @@ mpirun -np 1 python -u train.py --env-name='FetchPickAndPlace-v1' 2>&1 | tee pic
 
 
 ## Train the High-Level Choreographer (HLC):
-- Use your original Gym==0.10.8.
+- Use Gym==0.10.8 modified (gymHLC).
+- replace your original gym folder with the one present in this repository. Usually, if you are using anaconda you can find your gym at this path:
+```
+~/anaconda3/lib/python3.7/site-packages/gym
+```
+- rename your gym folder to whatever name you prefer and place the new gym folder copied from this repository and change the name from "gymHLC" to "gym".
 - In the "init Weights" folder there are some weights collected from BC subtasks training. If you want to test HLC with BC methods, copy the file in the "initWeights" folder into "train" and "weights" folders. If you want to test more time HLC, make sure to restore these initial weights every time: in the "weights" folder you will need to have: actor_params.pt taken from the initWeights folder.
 - Transfer the saved weights from the "saved_models" folder of "FetchPickAndPlace-DDPG+HER" of LSE training into the "HLC" folder (replace the folder if asked). Take the 3 files: approach.pt, manipulate.pt and retract.pt stored inside "saved_models/FetchPickAndPlace-v1" and transfer them inside the "weights" folder of HLC. So now in the weights folder you should have: `actor_params.pt`,`approach.pt`,`manipulate.pt`,`retract.pt`.
 
