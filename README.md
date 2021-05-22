@@ -82,7 +82,7 @@ mpirun -np 1 python -u train.py --env-name='FetchPickAndPlace-v1' 2>&1 | tee pic
 
 
 
-## Train the High-Level Synthesizer (HLS):
+## Train the High-Level Choreographer (HLC):
 - Use your original Gym==0.10.8.
 - Transfer the saved weights from the "saved_models" folder of "FetchPickAndPlace-DDPG+HER" into the "HLS" folder (replace the folder if asked)
 - In the "init Weights" folder there are some weights collected from BC subtasks training. If you want to test HLS with BC methods, copy the file in the "initWeights" folder in to "train" and "weights" folders.
