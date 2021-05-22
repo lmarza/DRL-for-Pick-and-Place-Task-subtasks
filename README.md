@@ -84,18 +84,17 @@ mpirun -np 1 python -u train.py --env-name='FetchPickAndPlace-v1' 2>&1 | tee pic
 
 ## Train the High-Level Choreographer (HLC):
 - Use your original Gym==0.10.8.
-- Transfer the saved weights from the "saved_models" folder of "FetchPickAndPlace-DDPG+HER" into the "HLS" folder (replace the folder if asked)
-- In the "init Weights" folder there are some weights collected from BC subtasks training. If you want to test HLS with BC methods, copy the file in the "initWeights" folder in to "train" and "weights" folders.
-- In the "HLS" folder you can choose different methods to train HLS: `dense_rewardHandEng`,`sparse_rewardHandEng`,`dense_reward_BC`,`sparse_reward_BC`, `dense_rewardDDPG_HER`,`sparse_rewardDDPG_HER`
+- Transfer the saved weights from the "saved_models" folder of "FetchPickAndPlace-DDPG+HER" into the "HLC" folder (replace the folder if asked)
+- In the "init Weights" folder there are some weights collected from BC subtasks training. If you want to test HLC with BC methods, copy the file in the "initWeights" folder in to "train" and "weights" folders.
+- In the "HLC" folder you can choose different methods to train HLS: `dense_rewardHandEng`,`sparse_rewardHandEng`,`dense_reward_BC`,`sparse_reward_BC`, `dense_rewardDDPG_HER`,`sparse_rewardDDPG_HER`
  
  Dense/sparse reward HandEng it's the training of an agent that has to learn how to choreograph hand engineering actions. Dense/Sparse reward BC it's the training of an agent that has to learn how to choreograph low-level behaviors trained with BC and similar for DDPG+HER.
 
-To train HLS with one of these methods just copy the name and past it in `main.py` file at line 17 
+To train HLC with one of these methods just copy the name and past it in `main.py` file at line 17 
 ```python=17
 from dense_rewardDDPG_HER import train, test
 ```
- For the results presented below, we used `dense_rewardDDPG_HER`/`dense_reward_BC`
- 
+
 - Run the program:
 ```
 python main.py
