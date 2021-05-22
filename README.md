@@ -9,8 +9,7 @@ Framework Proposed                       |  Architecture
 <img src="images/arc1.png" width="250">  |  <img src="images/generalArchitecture.png" width="250">
 
 
-Robotic learning using  Deep Reinforcement learning (DRL) has emerged as a leading robotic automation technique to generate adatible behaviour.
-However, a major drawback of using DRL is the *data hungry* training regime that requires millions of trial and error attempts, impractical in real robotic hardware. We propose a multi-subtask reinforcement learning method where complex tasks can be decomposed into low-level subtasks. These subtasks can be parametrized as expert networks and learnt via existing DRL methods. The trained subtasks can be sequenced with a high-level choreographer. As a testbed, we use a pick and place robotic simulator, and transfer the learnt behaviours in a real robotic system. We show that our method outperforms imitation learning based methods and reaches high success rate compared to an end-to-end learning approach. All our experiments are carried out on a CPU-based system that demonstrate their rapid deployment in simple computing systems, contrary to commonly used heavy processing machines such as GPU. Our approach deviates from the end-to-end learning strategy and provides an initial direction towards learning modular task representations that can generate robust and transferable behaviours.
+Deep Reinforcement Learning (DRL) is emerging as a promising approach to generate adaptive behaviors for robotic platforms. However, a major drawback of using DRL is the data-hungry training regime that requires millions of trial and error attempts, which is impractical when running experiments on robotic systems. To address this issue, we propose a multi-subtask reinforcement learning method where complex tasks are decomposed manually into low-level subtasks by leveraging human domain knowledge. These subtasks can be parametrized as expert networks and learned via existing DRL methods. Trained subtasks can then be composed with a high-level choreographer. As a testbed, we use a pick and place robotic simulator to demonstrate our methodology, and show that our method outperforms an imitation learning-based method and reaches a high success rate compared to an end to-end learning approach. Moreover, we transfer the learned behavior in a different robotic environment that allows us to exploit sim-to-real transfer and demonstrate the trajectories in a real robotic system. Our training regime is carried out using a central processing unit (CPU)-based system, which demonstrates the data-efficient properties of our approach.
 
 
 ## Implementation details
@@ -84,9 +83,10 @@ mpirun -np 1 python -u train.py --env-name='FetchPickAndPlace-v1' 2>&1 | tee pic
 
 ## Train the High-Level Choreographer (HLC):
 - Use your original Gym==0.10.8.
-- Transfer the saved weights from the "saved_models" folder of "FetchPickAndPlace-DDPG+HER" into the "HLC" folder (replace the folder if asked)
-- In the "init Weights" folder there are some weights collected from BC subtasks training. If you want to test HLC with BC methods, copy the file in the "initWeights" folder in to "train" and "weights" folders.
-- In the "HLC" folder you can choose different methods to train HLS: `dense_rewardHandEng`,`sparse_rewardHandEng`,`dense_reward_BC`,`sparse_reward_BC`, `dense_rewardDDPG_HER`,`sparse_rewardDDPG_HER`
+- In the "init Weights" folder there are some weights collected from BC subtasks training. If you want to test HLC with BC methods, copy the file in the "initWeights" folder into "train" and "weights" folders. If you want to test more time HLC, make sure to restore these initial weights every time: in the "weights" folder you will need to have: actor_params.pt taken from the initWeights folder.
+- Transfer the saved weights from the "saved_models" folder of "FetchPickAndPlace-DDPG+HER" of LSE training into the "HLC" folder (replace the folder if asked). Take the 3 files: approach.pt, manipulate.pt and retract.pt stored inside "saved_models/FetchPickAndPlace-v1" and transfer them inside the "weights" folder of HLC. So now in the weights folder you should have: `actor_params.pt`,`approach.pt`,`manipulate.pt`,`retract.pt`.
+
+- In the "HLC" folder you can choose different methods to train HLC: `dense_rewardHandEng`,`sparse_rewardHandEng`,`dense_reward_BC`,`sparse_reward_BC`, `dense_rewardDDPG_HER`,`sparse_rewardDDPG_HER`
  
 Dense/sparse reward HandEng it's the training of an agent that has to learn how to choreograph hand engineering actions. Dense/Sparse reward BC it's the training of an agent that has to learn how to choreograph low-level behaviors trained with BC and similar for DDPG+HER.
 
