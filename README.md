@@ -1,6 +1,7 @@
 # Towards Hierarchical Task Decomposition using Deep Reinforcement Learning for *Pick and Place* Subtasks
 
 **https://arxiv.org/abs/2102.04022 [Luca Marzari](https://github.com/LM095) et al.**
+
 ![Demo](images/paperVideo.gif)
 
 ## Abstract
