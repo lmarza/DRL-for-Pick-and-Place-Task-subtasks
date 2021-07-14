@@ -1,15 +1,10 @@
 # Towards Hierarchical Task Decomposition using Deep Reinforcement Learning for *Pick and Place* Subtasks
 
 **https://arxiv.org/abs/2102.04022 [Luca Marzari](https://github.com/LM095) et al.**
+![Demo](images/paperVideo.gif)
 
 ## Abstract
-
-Framework Proposed                       |  Architecture
-:---------------------------------------:|:-------------------------:
-<img src="images/arc1.png" width="250">  |  <img src="images/generalArchitecture.png" width="250">
-
-
-Deep Reinforcement Learning (DRL) is emerging as a promising approach to generate adaptive behaviors for robotic platforms. However, a major drawback of using DRL is the data-hungry training regime that requires millions of trial and error attempts, which is impractical when running experiments on robotic systems. To address this issue, we propose a multi-subtask reinforcement learning method where complex tasks are decomposed manually into low-level subtasks by leveraging human domain knowledge. These subtasks can be parametrized as expert networks and learned via existing DRL methods. Trained subtasks can then be composed with a high-level choreographer. As a testbed, we use a pick and place robotic simulator to demonstrate our methodology, and show that our method outperforms an imitation learning-based method and reaches a high success rate compared to an end to-end learning approach. Moreover, we transfer the learned behavior in a different robotic environment that allows us to exploit sim-to-real transfer and demonstrate the trajectories in a real robotic system. Our training regime is carried out using a central processing unit (CPU)-based system, which demonstrates the data-efficient properties of our approach.
+Deep Reinforcement Learning (DRL) is emerging as a promising approach to generate adaptive behaviors for robotic platforms. However, a major drawback of using DRL is the data-hungry training regime that requires millions of trial and error attempts, which is impractical when running experiments on robotic systems. To address this issue, we propose a multi-subtask reinforcement learning method where complex tasks are decomposed manually into low-level subtasks by leveraging human domain knowledge. These subtasks can be parametrized as expert networks and learned via existing DRL methods. Trained subtasks can then be composed with a high-level choreographer. As a testbed, we use a pick and place robotic simulator to demonstrate our methodology, and show that our method outperforms an imitation learning-based method and reaches a high success rate compared to an end to-end learning approach. Moreover, we transfer the learned behavior in a different robotic environment that allows us to exploit sim-to-real transfer and demonstrate the trajectories in a real robotic system.
 
 
 ## Implementation details
