@@ -43,6 +43,8 @@ https://github.com/cvas-ug/simple-reactive-nn
 
 ### Step 1: Train the Low-level Subtask Expert (LSE) 
 
+![](images/allTrainingProc.png)
+
 - Use Gym==0.17.1 modified.
 - replace your original gym folder with the one present in this repository. Usually, if you are using anaconda you can find your gym at this path:
 ```
