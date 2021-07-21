@@ -5,7 +5,7 @@
 ![Demo](images/paperVideo.gif)
 
 ## Abstract
-Deep Reinforcement Learning (DRL) is emerging as a promising approach to generate adaptive behaviors for robotic platforms. However, a major drawback of using DRL is the data-hungry training regime that requires millions of trial and error attempts, which is impractical when running experiments on robotic systems. To address this issue, we propose a multi-subtask reinforcement learning method where complex tasks are decomposed manually into low-level subtasks by leveraging human domain knowledge. These subtasks can be parametrized as expert networks and learned via existing DRL methods. Trained subtasks can then be composed with a high-level choreographer. As a testbed, we use a pick and place robotic simulator to demonstrate our methodology, and show that our method outperforms an imitation learning-based method and reaches a high success rate compared to an end to-end learning approach. Moreover, we transfer the learned behavior in a different robotic environment that allows us to exploit sim-to-real transfer and demonstrate the trajectories in a real robotic system.
+Deep Reinforcement Learning (DRL) is emerging as a promising approach to generate adaptive behaviors for robotic platforms. However, a major drawback of using DRL is the data-hungry training regime that requires millions of trial and error attempts, which is impractical when running experiments on robotic systems. To address this issue, we propose a multi-subtask reinforcement learning methodology where complex pick and place tasks can be decomposed into low-level subtasks. These subtasks are parametrized as expert networks and learned via DRL methods. Trained subtasks can then be composed with a high-level choreographer to accomplish the original task. As a testbed, we use a pick and place robotic simulator to demonstrate our methodology and show that our method outperforms a benchmark methodology based on learning from demonstrations. We transfer the learned policy to the real robotic system and demonstrate robust grasping using various geometric-shaped objects. 
 
 
 ## Implementation details
@@ -111,7 +111,7 @@ python main.py
 The figure presented here below depicts the sample-efficiency of DDPG+HER, BC and a end-to-end learning method for learning the subtasks.The peak represents the maximum success reached by each method for each subtask, i.e. first peak denotes the completion of training of the approach module, the second peak denotes completion of  training  of  the manipulate  module  and the third  peak  denotes  training of  retract module.
 DDPG+HER outperforms BC and reaches 100% success in 255k steps, while BC takes 372k steps. Moreover, DDPG+HER shows a smooth monotonous learning curve compared to BC which does not stabilise immediately after reaching high success values. Overall, DDPG+HER shows less variance compared to BC.
 
-![](https://i.imgur.com/s6QExO9.png)
+![](images/plotKFinal.png)
 
 
 
