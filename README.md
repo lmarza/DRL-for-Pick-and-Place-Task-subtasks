@@ -1,11 +1,11 @@
 # Towards Hierarchical Task Decomposition using Deep Reinforcement Learning for *Pick and Place* Subtasks
 
-**https://arxiv.org/abs/2102.04022 [Luca Marzari](https://github.com/LM095) et al.**
+ **[Luca Marzari](https://github.com/LM095) et al.** 
 
 ![Demo](images/paperVideo.gif)
 
 ## Abstract
-Deep Reinforcement Learning (DRL) is emerging as a promising approach to generate adaptive behaviors for robotic platforms. However, a major drawback of using DRL is the data-hungry training regime that requires millions of trial and error attempts, which is impractical when running experiments on robotic systems. To address this issue, we propose a multi-subtask reinforcement learning methodology where complex pick and place tasks can be decomposed into low-level subtasks. These subtasks are parametrized as expert networks and learned via DRL methods. Trained subtasks can then be composed with a high-level choreographer to accomplish the original task. As a testbed, we use a pick and place robotic simulator to demonstrate our methodology and show that our method outperforms a benchmark methodology based on learning from demonstrations. We transfer the learned policy to the real robotic system and demonstrate robust grasping using various geometric-shaped objects. 
+Deep Reinforcement Learning (DRL) is emerging as a promising approach to generate adaptive behaviors for robotic platforms. However, a major drawback of using DRL is the data-hungry training regime that requires millions of trial and error attempts, which is impractical when running experiments on robotic systems. Learning from Demonstrations (LfD) has been introduced to solve this issue by cloning the behavior of expert demonstrations. However, LfD requires a large number of demonstrations that are difficult to be acquired since dedicated complex setups are required.To overcome these limitations, we propose a multi-subtask reinforcement learning methodology where complex pick and place tasks can be decomposed into low-level subtasks. These subtasks are parametrized as expert networks and learned via DRL methods. Trained subtasks are then combined by a high-level choreographer to accomplish the intended pick and place task considering different initial configurations. As a testbed, we use a pick and place robotic simulator to demonstrate our methodology and show that our method outperforms a benchmark methodology based on LfD in terms of sample-efficiency.We transfer the learned policy to the real robotic system and demonstrate robust grasping using various geometric-shaped objects. 
 
 
 ## Implementation details
@@ -109,7 +109,7 @@ python main.py
 
 ### LSE training:
 The figure presented here below depicts the sample-efficiency of DDPG+HER, BC and a end-to-end learning method for learning the subtasks.The peak represents the maximum success reached by each method for each subtask, i.e. first peak denotes the completion of training of the approach module, the second peak denotes completion of  training  of  the manipulate  module  and the third  peak  denotes  training of  retract module.
-DDPG+HER outperforms BC and reaches 100% success in 255k steps, while BC takes 372k steps. Moreover, DDPG+HER shows a smooth monotonous learning curve compared to BC which does not stabilise immediately after reaching high success values. Overall, DDPG+HER shows less variance compared to BC.
+DDPG+HER outperforms BC and reaches 100% success in 218k steps, while BC takes 372k steps. Moreover, DDPG+HER shows a smooth monotonous learning curve compared to BC which does not stabilise immediately after reaching high success values. Overall, DDPG+HER shows less variance compared to BC.
 
 ![](images/plotKFinal.png)
 
@@ -122,14 +122,3 @@ DDPG+HER outperforms BC and reaches 100% success in 255k steps, while BC takes 3
 For the robotic implementation and for panda-gym integration with real robot check this repo https://github.com/Envq/panda_gym_integration.
 This part of the work was made by **Enrico Sgarbanti** [@**Envq**](https://github.com/Envq) of University of Verona.
 
-## Citation
-This work has been submitted to the IEEE for possible publication. Copyright may be transferred without notice, after which this version may no longer be accessible.
-Towards Hierarchical Task Decomposition using Deep Reinforcement Learning for Pick and Place Subtasks:  
-```
-@article{marzari2021towards,
-  title={Towards Hierarchical Task Decomposition using Deep Reinforcement Learning for Pick and Place Subtasks},
-  author={Marzari, Luca and Pore, Ameya and Dall'Alba, Diego and Aragon-Camarasa, Gerardo and Farinelli, Alessandro and Fiorini, Paolo},
-  journal={arXiv preprint arXiv:2102.04022},
-  year={2021}
-}
-```
