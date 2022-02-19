@@ -122,3 +122,15 @@ DDPG+HER outperforms BC and reaches 100% success in 218k steps, while BC takes 3
 For the robotic implementation and for panda-gym integration with real robot check this repo https://github.com/Envq/panda_gym_integration.
 This part of the work was made by **Enrico Sgarbanti** [@**Envq**](https://github.com/Envq) of University of Verona.
 
+## Citation
+Towards Hierarchical Task Decomposition using Deep Reinforcement Learning for Pick and Place Subtasks:
+```
+@inproceedings{marzari2021towards,
+  title={Towards Hierarchical Task Decomposition using Deep Reinforcement Learning for Pick and Place Subtasks},
+  author={Marzari, Luca and Pore, Ameya and Dall'Alba, Diego and Aragon-Camarasa, Gerardo and Farinelli, Alessandro and Fiorini, Paolo},
+  booktitle={2021 20th International Conference on Advanced Robotics (ICAR)},
+  pages={640--645},
+  year={2021},
+  organization={IEEE}
+}
+```
